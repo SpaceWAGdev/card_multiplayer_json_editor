@@ -96,7 +96,7 @@ func _on_new_card_button_pressed() -> void:
 
 
 func _on_image_button_pressed() -> void:
-	var command = load_txt_file("res://addons/card_editor/image_editor.txt").replace("%FILE%", ProjectSettings.globalize_path("res://Cards/images/" + ACTIVE_CARD + ".svg"))
+	var command = load_txt_file("res://addons/card_multiplayer_json_editor/image_editor.txt").replace("%FILE%", ProjectSettings.globalize_path("res://Cards/images/" + ACTIVE_CARD + ".svg"))
 	OS.execute(command.split(" ")[0], command.split(" ").slice(1, len(command.split(" "))))
 
 func _on_script_button_pressed() -> void:

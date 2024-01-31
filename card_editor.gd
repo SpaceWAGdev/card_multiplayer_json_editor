@@ -1,7 +1,7 @@
 @tool
 extends EditorPlugin
 
-const editor_window = preload("res://addons/card_editor/card_editor_window.tscn")
+const editor_window = preload("res://addons/card_multiplayer_json_editor/card_editor_window.tscn")
 var editor_window_instance
 
 func _enter_tree():

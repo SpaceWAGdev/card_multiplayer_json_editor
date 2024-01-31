@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cmk3ltuiihjtu"]
 
-[ext_resource type="Script" path="res://addons/card_editor/card_editor_window.gd" id="1_wjrdr"]
-[ext_resource type="Texture2D" uid="uid://dvqeqhar1e838" path="res://Cards/images/079b8040-9b52-11ee-b9d1-0242ac120002.png" id="2_ipxla"]
+[ext_resource type="Script" path="res://addons/card_multiplayer_json_editor/card_editor_window.gd" id="1_bmys0"]
+[ext_resource type="Texture2D" uid="uid://dvqeqhar1e838" path="res://Cards/images/079b8040-9b52-11ee-b9d1-0242ac120002.png" id="2_12qiy"]
 
 [node name="CardEditorWindow" type="HSplitContainer"]
 custom_minimum_size = Vector2(400, 0)
@@ -14,7 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_wjrdr")
+script = ExtResource("1_bmys0")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -178,7 +178,7 @@ text = "SAVE"
 [node name="CardImage" type="TextureRect" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("2_ipxla")
+texture = ExtResource("2_12qiy")
 expand_mode = 3
 stretch_mode = 4
 
