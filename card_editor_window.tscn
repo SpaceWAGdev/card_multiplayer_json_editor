@@ -1,0 +1,193 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmk3ltuiihjtu"]
+
+[ext_resource type="Script" path="res://addons/card_editor/card_editor_window.gd" id="1_wjrdr"]
+[ext_resource type="Texture2D" uid="uid://dvqeqhar1e838" path="res://Cards/images/079b8040-9b52-11ee-b9d1-0242ac120002.png" id="2_ipxla"]
+
+[node name="CardEditorWindow" type="HSplitContainer"]
+custom_minimum_size = Vector2(400, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_wjrdr")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="CardFilePathField" type="LineEdit" parent="VBoxContainer2/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "res://Cards/cards.json"
+
+[node name="OpenButton" type="Button" parent="VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+text = "OPEN"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="CardSelectDropdown" type="OptionButton" parent="VBoxContainer2/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 5
+selected = 0
+popup/item_0/text = "Lia"
+popup/item_0/id = 0
+popup/item_1/text = "Jakob"
+popup/item_1/id = 1
+popup/item_2/text = "Der Wind"
+popup/item_2/id = 2
+popup/item_3/text = "Magisches Brokkoli"
+popup/item_3/id = 3
+popup/item_4/text = "Der Sharif"
+popup/item_4/id = 4
+
+[node name="CardNameLabel" type="Label" parent="VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Lia"
+autowrap_mode = 1
+
+[node name="NewCardButton" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "New Card"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="ImageButton" type="Button" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Image"
+
+[node name="ScriptButton" type="Button" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Script"
+
+[node name="CopyUUIDButton" type="Button" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Copy UUID"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "UUID"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="GenerateUUIDButton" type="Button" parent="VBoxContainer2/VBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+tooltip_text = "Generates a new random UUID. If the field already contains a UUID, it is copied to clipboard."
+text = "Generate"
+
+[node name="UUIDField" type="LineEdit" parent="VBoxContainer2/VBoxContainer/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "079b8040-9b52-11ee-b9d1-0242ac120002"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2/VBoxContainer/VBoxContainer4"]
+layout_mode = 2
+text = "Name"
+
+[node name="NameField" type="LineEdit" parent="VBoxContainer2/VBoxContainer/VBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Lia"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Type"
+
+[node name="TypeDropdown" type="OptionButton" parent="VBoxContainer2/VBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 2
+selected = 0
+popup/item_0/text = "entity"
+popup/item_0/id = 0
+popup/item_1/text = "spell"
+popup/item_1/id = 1
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer2/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2/VBoxContainer/VBoxContainer3/VBoxContainer5"]
+layout_mode = 2
+text = "Damage"
+
+[node name="DamageField" type="LineEdit" parent="VBoxContainer2/VBoxContainer/VBoxContainer3/VBoxContainer5"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "3"
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer2/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2/VBoxContainer/VBoxContainer3/VBoxContainer6"]
+layout_mode = 2
+text = "Mana"
+
+[node name="ManaField" type="LineEdit" parent="VBoxContainer2/VBoxContainer/VBoxContainer3/VBoxContainer6"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "5"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tooltip"
+
+[node name="TooltipField" type="LineEdit" parent="VBoxContainer2/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "5"
+
+[node name="SaveButton" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "SAVE"
+
+[node name="CardImage" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("2_ipxla")
+expand_mode = 3
+stretch_mode = 4
+
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer2/OpenButton" to="." method="_on_load_button_pressed"]
+[connection signal="item_selected" from="VBoxContainer2/HBoxContainer3/CardSelectDropdown" to="." method="load_card"]
+[connection signal="pressed" from="VBoxContainer2/NewCardButton" to="." method="_on_new_card_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer/ImageButton" to="." method="_on_image_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer/ScriptButton" to="." method="_on_script_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer/CopyUUIDButton" to="." method="_on_copy_uuid_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/VBoxContainer/VBoxContainer2/HBoxContainer/GenerateUUIDButton" to="." method="_on_generate_uuid_button_pressed"]
+[connection signal="text_changed" from="VBoxContainer2/VBoxContainer/VBoxContainer4/NameField" to="VBoxContainer2/CardNameLabel" method="set_text"]
+[connection signal="pressed" from="VBoxContainer2/SaveButton" to="." method="_on_save_button_pressed"]
