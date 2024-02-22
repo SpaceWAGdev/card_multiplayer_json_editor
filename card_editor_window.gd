@@ -123,7 +123,7 @@ func _on_image_button_pressed() -> void:
 func _on_script_button_pressed() -> void:
 	if not ResourceLoader.exists("res://Cards/scripts/" + ACTIVE_CARD + ".gd"):
 		var new_script = GDScript.new()
-		new_script.source_code = "# " + UUID_CARD_TABLE[ACTIVE_CARD]["name"] + "\n"
+		new_script.source_code = "# " + UUID_CARD_TABLE[ACTIVE_CARD]["name"] + "\n extends CardBase"
 		ResourceSaver.save(new_script, "res://Cards/scripts/" + ACTIVE_CARD + ".gd")
 	EditorInterface.edit_resource(load("res://Cards/scripts/" + ACTIVE_CARD + ".gd"))
 func _on_copy_uuid_button_pressed() -> void:
