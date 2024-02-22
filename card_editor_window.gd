@@ -52,6 +52,8 @@ func handle_load_card(data: Dictionary):
 	%DamageField.text = str(data["damage"])
 	%ManaField.text = str(data["mana"])
 	%TooltipField.text = data["tooltip"]
+	%HealthField.text = str(data["health"])
+	%ManaCostField.text = data["manaCost"]
 	if ResourceLoader.exists("res://Cards/images/" + ACTIVE_CARD + ".png"):
 		%CardImage.texture = load("res://Cards/images/" + ACTIVE_CARD + ".png")
 	else:
@@ -77,6 +79,8 @@ func _on_save_button_pressed():
 	UUID_CARD_TABLE[ACTIVE_CARD]["damage"] = %DamageField.text
 	UUID_CARD_TABLE[ACTIVE_CARD]["mana"] = %ManaField.text
 	UUID_CARD_TABLE[ACTIVE_CARD]["tooltip"] = %TooltipField.text
+	UUID_CARD_TABLE[ACTIVE_CARD]["health"] = %HealthField.text
+	UUID_CARD_TABLE[ACTIVE_CARD]["manaCost"] = %ManaCostField.text
 	save_card_file()
 
 func load_card(index: int) -> void:
@@ -89,10 +93,27 @@ func _on_new_card_button_pressed() -> void:
 		%TypeDropdown.add_item(type, TYPES[type])
 	%CardNameLabel.text = ""
 	%NameField.text = ""
-	%UUIDField.text = ""
 	%DamageField.text = ""
 	%ManaField.text = ""
 	%TooltipField.text = ""
+	%ManaCostField.text = ""
+	%HealthField.text = ""
+	var new_uuid = uuid_util.v4()
+	ACTIVE_CARD = new_uuid
+	%UUIDField.text = new_uuid
+	UUID_CARD_TABLE.merge({new_uuid: {
+		"class": "Default",
+        "damage": "0",
+        "health": "0",
+        "mana": "0",
+        "manaCost": "0",
+        "name": "0",
+        "tooltip": "0",
+        "type": "entity",
+        "uuid": new_uuid
+	}})
+	save_card_file()
+	_on_load_button_pressed()
 
 
 func _on_image_button_pressed() -> void:
